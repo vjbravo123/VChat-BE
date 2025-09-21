@@ -25,8 +25,6 @@ const io = new Server(server, {
 
 connectdb(process.env.MONGO_URI);
 
-// store messages per room in memory
-const rooms = {}; // { roomId: [ { sender, text, time } ] }
 
 
 
@@ -86,6 +84,28 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User disconnected:", socket.id);
   });
+});
+
+
+// server.js (Express)
+app.delete("/friend-remove", async (req, res) => {
+  const { userId, friendId } = req.body;
+
+  try {
+    // 1. Remove friend from both users
+    await User.findByIdAndUpdate(userId, { $pull: { friends: friendId } });
+    await User.findByIdAndUpdate(friendId, { $pull: { friends: userId } });
+
+    // 2. Delete their conversation
+    await Conversation.findOneAndDelete({
+      participants: { $all: [userId, friendId] }
+    });
+
+    res.json({ message: "Friend removed and conversation deleted" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Something went wrong" });
+  }
 });
 
 
