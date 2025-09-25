@@ -5,61 +5,71 @@ A real-time chat backend built with **Node.js**, **Express**, and **Socket.IO**.
 
 ---
 
+## 🌐 Live Backend
+
+You can access the live backend here: [https://vchat-be.onrender.com](https://vchat-be.onrender.com) 🌐
+
+---
+
 ## 🚀 Features
 
-- **Real-Time Messaging**: Instant communication with Socket.IO.
-- **User Authentication**: Secure login and registration.
-- **Chat Rooms**: Create and join rooms for group chats.
-- **Environment Configuration**: Managed using `.env` for sensitive data.
+- **Real-Time Messaging**: Instant communication with Socket.IO.  
+- **User Authentication**: Secure login and registration.  
+- **Chat Rooms**: Create and join rooms for group chats.  
+- **Environment Configuration**: Managed using `.env` for sensitive data.  
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Backend**: Node.js, Express
-- **Real-Time Communication**: Socket.IO
-- **Database**: MongoDB (via Mongoose)
-- **Environment Variables**: dotenv
+- **Backend**: Node.js, Express  
+- **Real-Time Communication**: Socket.IO  
+- **Database**: MongoDB (via Mongoose)  
+- **Environment Variables**: dotenv  
 
 ---
 
 ## 📦 Installation & Setup
 
-Clone the repository and install dependencies:
+1. Clone the backend repository:
 
-\`\`\`bash
+```bash
 git clone https://github.com/vjbravo123/VChat-BE.git
 cd VChat-BE
 npm install
-\`\`\`
+```
 
-Create a \`.env\` file in the root directory and add your environment variables:
+2. Create a `.env` file in the root directory and add your environment variables:
 
-\`\`\`env
-MONGO_URI=mongodb://127.0.0.1:27017/Vchat
-JWT_SECRET=your_jwt_secret
-\`\`\`
+```env
+MONGO_URI=Your mongodb connection string goes here
+JWT_SECRET=Your secret key
+```
 
-Start the server:
+3. Start the backend server:
 
-\`\`\`bash
+```bash
 npm start
-\`\`\`
+```
+
+> Or, if you just want to see how the project works, the backend is live at: [https://vchat-be.onrender.com](https://vchat-be.onrender.com)  
 
 ---
 
 ## 🔗 Usage
 
-- Ensure the VChat-FE frontend is running and connected to this backend.
-- Use API endpoints to interact with the chat server (refer to API docs if available).
-
-Open your browser or frontend app to connect to the backend via \`http://localhost:5000\`.
+- Ensure the VChat-FE frontend is running and connected to this backend.  
+- Use API endpoints to interact with the chat server (refer to API docs if available).  
+- Connect via frontend or directly via: `http://localhost:5000` (default port).  
 
 ---
 
 ## 📄 License
 
+```text
 This project is licensed under the MIT License.
+See the LICENSE file for details.
+```
 
 ---
 
@@ -71,4 +81,4 @@ For the frontend implementation, visit the [VChat-FE repository](https://github.
 
 ## 🔗 GitHub Repo
 
-Backend Repository: [https://github.com/vjbravo123/VChat-BE](https://github.com/vjbravo123/VChat-BE)
+Backend Repository: [https://github.com/vjbravo123/VChat-BE](https://github.com/vjbravo123/VChat-BE)  
