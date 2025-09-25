@@ -2,13 +2,14 @@ import Conversation from "../models/Conversation.js";
 import User from "../models/Users.js";
 
 export const getFriendsListByUserId = async (req, res) => {
-    const { userId } = req.params;
+    const  userId  = req.id;
     const user = await User.findById(userId).populate("friends", "username");
     res.json({ friends: user.friends || [] });
 }
 
 export const deleteFriend = async (req, res) => {
-    const { userId, friendId } = req.body;
+    const { friendId } = req.body;
+    const userId = req.id;
 
     try {
         // 1. Remove friend from both users
