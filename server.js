@@ -38,7 +38,9 @@ app.use('/api/friend' , friendRouter);
 app.use('/api/conversation' , conversationRouter)
 
 
-
+app.get('/' , (req,res)=>{
+  res.send("You have received the VChat backend server Sucessfully")
+})
 server.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
 });
